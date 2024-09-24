@@ -1,0 +1,13 @@
+[Unit]
+Description=Postfix Socketmap Daemon for AWS Keyspaces
+After=network.target
+
+[Service]
+Type=simple
+ExecStart=/usr/local/bin/postfix-aws-cassandra
+User=postfix
+Group=postfix
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target
